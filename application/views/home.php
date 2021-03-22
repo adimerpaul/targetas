@@ -102,6 +102,7 @@
                         data-cargo='$row->cargo'
                         ><i class='fa fa-pencil'></i></a>
                         <a href='".base_url()."Cliente/borrar/$row->id' onclick='eliminar(event)' class='on-default remove-row'><i class='fa fa-trash-o'></i></a>
+                        <a href='".base_url()."Cliente/targeta/$row->id'  target='_blank' class='on-default remove-row'><i class='fa fa-credit-card'></i></a>
                     </td>
                 </tr>";
                 }
