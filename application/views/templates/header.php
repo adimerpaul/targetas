@@ -618,7 +618,7 @@
 <!--                                </ul>-->
 <!--                            </li>-->
                             <li >
-                                <a>
+                                <a href="<?=base_url()?>Reporte">
                                     <i class="fa fa-align-left" aria-hidden="true"></i>
                                     <span>Reportes</span>
                                 </a>
