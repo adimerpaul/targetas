@@ -18,8 +18,24 @@ class Reporte extends CI_Controller {
         ");
         $array=array();
         foreach ($query->result() as $row){
+            $query2=$this->db->query("SELECT *
+            FROM horas
+            WHERE dia_id='$row->id'
+            ");
             $a=array();
+            $dias=array();
+            $con=0;
+            foreach ($query2->result() as $row2){
+                $con++;
+                if ($con==1){
+                    $dias['entrada']=$row2->hora;
+                }else{
+                    $dias['salida']=$row2->hora;
+                }
+            }
             $a['nombre']=$row->nombre;
+            $a['dia']=$row->dia;
+            $a['estados']=$dias;
             $array[]=$a;
         }
         echo json_encode($array);

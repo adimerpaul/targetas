@@ -62,7 +62,7 @@
             <table id="example" class="display" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>#</th>
                     <th>Position</th>
                     <th>Office</th>
                     <th>Age</th>
@@ -125,6 +125,25 @@
                 success:function (e){
                     let datos=JSON.parse(e);
                     console.log(datos);
+                    let dat="";
+                    datos.forEach(row=>{
+                        console.log(row);
+                        dat+="<tr>" +
+                            "<td>"+row.nombre+"</td>" +
+                            "<td>b</td>" +
+                            "<td>c</td>" +
+                            "<td>asdsa</td>" +
+                            "<td>asda</td>" +
+                            "<td>asd</td>" +
+                            "</tr>";
+                    })
+                    $('#datos').html(dat);
+                    tabla=$('#example').DataTable( {
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    } );
                 }
             })
             return false;
